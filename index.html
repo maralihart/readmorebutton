@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <head>
+        <title></title>
+        <style> #more1, #more2 {display: none;} </style>
+    </head>
+    <body>
+        <h2>Header</h2>
+        <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. <span id="dots1">...</span><span id="more1">Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.</span></p>
+        <button onclick="Function1()" id="myBtn1">Read More</button>
+
+        <h2>Header</h2>
+        <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. <span id="dots2">...</span><span id="more2">Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.</span></p>
+        <button onclick="Function2()" id="myBtn2">Read More</button>
+
+        <script>
+            function Function1(number) {
+                var dots = document.getElementById("dots1");
+                var moreText = document.getElementById("more");
+                var btnText = document.getElementById("myBtn1");
+
+                if (dots.style.display === "none") {
+                    dots.style.display = "inline";
+                    btnText.innerHTML = "Read more";
+                    moreText.style.display = "none";
+                } else {
+                    dots.style.display = "none";
+                    btnText.innerHTML = "Read less";
+                    moreText.style.display = "inline";
+                }
+            }
+        </script>
+    </body>
+</html>
