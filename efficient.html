@@ -4,23 +4,23 @@
         <style> #more1, #more2 {display: none;} </style>
     </head>
     <body>
-        <!-- This is your first paragraph. Notice how all the ids have '1' at the end. You need to specify separate IDs as if you have both buttons affecting dots1, more1, and myBtn1 then it'll bug-->
+        <!-- This is your first paragraph. Notice how all the ids have '1' at the end -->
         <h2>Header</h2>
         <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. <span id="dots1">...</span><span id="more1">Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.</span></p>
         <!-- When you click this button, it will perform Function1() found in the <script> -->
-        <button onclick="Function1()" id="myBtn1">Read More</button>
+        <button onclick="readToggle('dots1', 'more1', 'myBtn1')" id="myBtn1">Read More</button>
 
         <!-- This is your second paragraph. Notice how all the ids have '2' at the end -->
         <h2>Header</h2>
         <p>Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. <span id="dots2">...</span><span id="more2">Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.</span></p>
-        <button onclick="Function2()" id="myBtn2">Read More</button>
+        <button onclick="readToggle('dots2', 'more2', 'myBtn2')"  id="myBtn2">Read More</button>
 
         <script>
-            function Function1() {
-                // Here, you're making dots equal the span with id = "dots1", moreText to "more1", and btnText to "myBtn2"
-                var dots = document.getElementById("dots1");
-                var moreText = document.getElementById("more1");
-                var btnText = document.getElementById("myBtn1");
+            function readToggle(dot, more, btn) {
+                // Here, you take in the strings (in ' ') that were passed when you called the function in <button onclick = [FUNCTION CALL]. This way you only need one function.
+                var dots = document.getElementById(dot);
+                var moreText = document.getElementById(more);
+                var btnText = document.getElementById(btn);
 
                 // Here you'll toggle between read more and read less
 
@@ -34,23 +34,6 @@
                     dots.style.display = "none"; // hide the dots
                     btnText.innerHTML = "Read less"; // make the button say "Read less"
                     moreText.style.display = "inline"; // show more text
-                }
-            }
-
-            function Function2() {
-                // This function is literally the same as Function1, except the dots, moreText, and btnText are set to the second paragraph's dots, more, and button
-                var dots = document.getElementById("dots2");
-                var moreText = document.getElementById("more2");
-                var btnText = document.getElementById("myBtn2");
-
-                if (dots.style.display === "none") {
-                    dots.style.display = "inline";
-                    btnText.innerHTML = "Read more";
-                    moreText.style.display = "none";
-                } else {
-                    dots.style.display = "none";
-                    btnText.innerHTML = "Read less";
-                    moreText.style.display = "inline";
                 }
             }
         </script>
